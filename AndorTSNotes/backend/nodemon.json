@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "dev"],
+    "ext": ".ts,.js",
+    "ignoe":[],
+    "exec":"ts-node ./Main.ts"
+}

@@ -1,0 +1,8 @@
+{"level":30,"time":1620905217280,"pid":17544,"hostname":"MGrant-work","0":"False","msg":"Config read"}
+{"level":30,"time":1620905217354,"pid":17544,"hostname":"MGrant-work","0":"\u001b[44m\u001b[30m LISTENING \u001b[0m on: 44833","msg":"HttpServer"}
+{"level":30,"time":1620906719596,"pid":18642,"hostname":"MGrant-work","0":"False","msg":"Config read"}
+{"level":30,"time":1620906719635,"pid":18642,"hostname":"MGrant-work","0":"\u001b[44m\u001b[30m LISTENING \u001b[0m on: 8080","msg":"HttpServer"}
+{"level":30,"time":1620906751437,"pid":18693,"hostname":"MGrant-work","0":"False","msg":"Config read"}
+{"level":30,"time":1620906751472,"pid":18693,"hostname":"MGrant-work","0":"\u001b[44m\u001b[30m LISTENING \u001b[0m on: 8080","msg":"HttpServer"}
+{"level":30,"time":1620914569145,"pid":8089,"hostname":"MGrant-work","0":"False","msg":"Config read"}
+{"level":30,"time":1620914569251,"pid":8089,"hostname":"MGrant-work","0":"\u001b[44m\u001b[30m LISTENING \u001b[0m on: 8080","msg":"HttpServer"}
