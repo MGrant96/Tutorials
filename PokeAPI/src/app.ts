@@ -1,20 +1,22 @@
-import { Application } from "express";
-import { MONGO_URL } from "./constants/pokeapi.constants";
+import { MONGO } from "./constants/pokeapi.constants";
 import { PokemonController } from "./controllers/pokemon.controller";
 import { PokemonService } from "./services/pokemon.service";
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
+import { handleErrors } from "./middlewares/error-handler.middleware";
 import mongoose from "mongoose";
 
+
 class App {
-  public app: Application;
+  public app: express.Application;
 
   constructor() {
     this.app = express();
     this.setConfig();
-    this.setControllers();
     this.setMongoConfig();
+    this.setControllers();
+    this.setErrorHandlingMiddleware();
   }
 
   private setConfig() {
@@ -23,19 +25,24 @@ class App {
     this.app.use(cors());
   }
 
-  private setControllers() {
-    // Creating a new instance of our Pokemon Controller
-    const pokemonController = new PokemonController(new PokemonService());
+  private setMongoConfig() {
+    mongoose.Promise = global.Promise;
+    mongoose.connect(MONGO.url, MONGO.configuration);
+    mongoose.set("toJSON", {
+      virtuals: true,
+      transform: (_: any, converted: any) => {
+        delete converted._id;
+      },
+    });
+  }
 
-    // Telling express to use our Controller's routes
+  private setControllers() {
+    const pokemonController = new PokemonController(new PokemonService());
     this.app.use("/pokemon", pokemonController.router);
   }
 
-  private setMongoConfig() {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(MONGO_URL, {
-      useNewUrlParser: true,
-    });
+  private setErrorHandlingMiddleware() {
+    this.app.use(handleErrors);
   }
 }
 
