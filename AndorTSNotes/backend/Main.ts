@@ -16,13 +16,13 @@ const server = new KaiyoLite ( {
         UserController
     ],
     providers: [
-        //  createMongoDbConnection({
-        //     dbName: "auth-test",
-        //     password: "",
-        //     username: "",
-        //     host: "localhost",
-        //     port: 27017
-        //  })
+        createMongoDbConnection({
+            dbName: "auth-test",
+            password: "",
+            username: "",
+            host: "localhost",
+            port: 27017
+        })
     ]
 });
 
