@@ -42,5 +42,4 @@ export class PokemonService {
 
     return updatedPokemon;
   }
-
 }
