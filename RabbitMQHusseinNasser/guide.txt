@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=Cie5v59mrTg&t=526s
+
+node publisher
+
+// Takes argument at end!
+npm run publish 202
+
+node consumer
+npm run consume
